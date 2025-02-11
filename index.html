@@ -23,14 +23,17 @@
             height: 100vh;
             padding: 5vw;
             font-family: 'Pacifico', cursive;
-            overflow: hidden; /* Ukrywa zdjęcie przed kliknięciem */
+            overflow: hidden;
+            position: relative; /* Daje kontrolę nad pozycjonowaniem elementów */
         }
 
         .text-container {
             max-width: 90vw;
             word-wrap: break-word;
             text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
-            display: none; /* Ukrywa tekst i tło przed kliknięciem */
+            display: none; /* Ukrywa tekst przed kliknięciem */
+            position: relative;
+            z-index: 2; /* Ustawia tekst na wierzchu */
         }
 
         h1, h2 {
@@ -46,26 +49,24 @@
             border: none;
             border-radius: 10px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            position: relative;
+            z-index: 3; /* Przycisk na wierzchu */
         }
 
         button:hover {
             background-color: #FF1493;
         }
 
-        button:active {
-            transform: scale(0.95);
-        }
-
         .background {
             display: none; /* Ukrywa tło przed kliknięciem */
             background: url('tlo.jpeg') no-repeat center center;
-            background-size: contain;
+            background-size: contain; /* Skalowanie tła, aby było całe widoczne */
             width: 100%;
             height: 100%;
             position: absolute;
             top: 0;
             left: 0;
+            z-index: 1; /* Tło za tekstem i przyciskiem */
         }
 
         audio {
