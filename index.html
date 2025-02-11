@@ -12,6 +12,7 @@
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
             background-color: #FFC0CB;
             color: white;
@@ -21,29 +22,37 @@
             align-items: center;
             height: 100vh;
             font-family: 'Pacifico', cursive;
+            transition: background 1s ease;
         }
+
         .text-container {
             display: none;
             max-width: 90vw;
             word-wrap: break-word;
             text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
         }
+
         h1, h2 {
             font-size: 3vw;
             font-weight: 400;
         }
+
         audio {
             display: block;
             margin-top: 20px;
         }
+
         button {
-            padding: 10px 20px;
-            font-size: 1.5vw;
+            padding: 15px 30px;
+            font-size: 2vw;
             background-color: #FF69B4;
             border: none;
             color: white;
             cursor: pointer;
+            border-radius: 25px; /* Zaokrąglony przycisk */
+            transition: background-color 0.3s ease;
         }
+
         button:hover {
             background-color: #FF1493;
         }
@@ -71,8 +80,8 @@
             content.style.display = 'block';
 
             // Ustaw tło (zdjęcie) na stronie
-            document.body.style.background = 'url("tlo.jpeg") no-repeat center center';
-            document.body.style.backgroundSize = 'cover';
+            document.body.style.background = 'url("tlo.jpeg") no-repeat center center fixed';
+            document.body.style.backgroundSize = 'cover'; // Skalowanie tła do urządzenia
 
             // Odtwórz muzykę
             var audio = document.getElementById('music');
@@ -81,4 +90,3 @@
     </script>
 </body>
 </html>
-
