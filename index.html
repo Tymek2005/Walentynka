@@ -13,8 +13,6 @@
             box-sizing: border-box;
         }
         body {
-            background: url('tlo.jpeg') no-repeat center center;
-            background-size: contain;
             background-color: #FFC0CB;
             color: white;
             text-align: center;
@@ -22,10 +20,10 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            padding: 5vw;
             font-family: 'Pacifico', cursive;
         }
         .text-container {
+            display: none;
             max-width: 90vw;
             word-wrap: break-word;
             text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
@@ -35,7 +33,8 @@
             font-weight: 400;
         }
         audio {
-            display: none;
+            display: block;
+            margin-top: 20px;
         }
         button {
             padding: 10px 20px;
@@ -44,7 +43,6 @@
             border: none;
             color: white;
             cursor: pointer;
-            margin-top: 20px;
         }
         button:hover {
             background-color: #FF1493;
@@ -52,18 +50,27 @@
     </style>
 </head>
 <body>
-    <div class="text-container">
+    <div class="text-container" id="content">
         <h1>Myszeczko moja kochana, którą kocham bardziej niż Ty mnie kochasz myszeczko</h1>
         <h2>Zostaniesz moją walentynką?</h2>
         <audio id="music" loop>
             <source src="muzyka.mp3" type="audio/mpeg">
             Twoja przeglądarka nie obsługuje odtwarzacza audio.
         </audio>
-        <button onclick="playMusic()">kliknij myszeczko</button>
     </div>
 
+    <button onclick="showContent()">Kliknij, aby zobaczyć walentynkę</button>
+
     <script>
-        function playMusic() {
+        function showContent() {
+            // Ukryj przycisk
+            document.querySelector('button').style.display = 'none';
+
+            // Pokaż tekst, zdjęcie i muzykę
+            var content = document.getElementById('content');
+            content.style.display = 'block';
+
+            // Odtwórz muzykę
             var audio = document.getElementById('music');
             audio.play();
         }
