@@ -14,7 +14,7 @@
         }
 
         body {
-            background-color: #FFC0CB;
+            background-color: #FFC0CB; /* Różowe tło */
             color: white;
             text-align: center;
             display: flex;
@@ -23,6 +23,11 @@
             height: 100vh;
             font-family: 'Pacifico', cursive;
             transition: background 1s ease;
+            background: url('tlo.jpeg') no-repeat center center;
+            background-size: contain; /* Upewnia się, że zdjęcie jest widoczne w całości */
+            background-color: #FFC0CB; /* Różowe pasy na bokach */
+            background-position: center; /* Wyśrodkowanie zdjęcia */
+            background-attachment: fixed; /* Tło nie przesuwa się podczas przewijania */
         }
 
         .text-container {
@@ -81,7 +86,7 @@
 
             // Ustaw tło (zdjęcie) na stronie
             document.body.style.background = 'url("tlo.jpeg") no-repeat center center fixed';
-            document.body.style.backgroundSize = 'cover'; // Skalowanie tła do urządzenia
+            document.body.style.backgroundSize = 'contain'; // Skalowanie tła do urządzenia
 
             // Odtwórz muzykę
             var audio = document.getElementById('music');
